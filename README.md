@@ -18,7 +18,7 @@ The project is not a live trading system. It is a historical research and backte
 
 The chart below is the highest-signal comparison in the repository: paper baseline, final model, and buy-and-hold under the same unified protocol. The final model still trails buy-and-hold on headline return, but it improves both Sharpe and drawdown relative to the baseline and retains a much shallower drawdown profile than passive SPY.
 
-![Equity curve comparison](assets/equity-curve-comparison.png)
+![Equity curve comparison](docs/images/equity-curve-comparison.png)
 
 ## Motivation
 
@@ -71,9 +71,9 @@ The retained state semantics audit shows that the clustering is not arbitrary. A
 
 The first chart below uses **state-level annualized CAGR** within each split. It shows that one latent state systematically carries the higher annualized return profile. The second chart shows the corresponding annualized volatility split, which helps explain why the regime labels are economically interpretable rather than purely statistical artifacts.
 
-<img src="docs/images/jump-cagr.png" width="900">
+![Jump Model state CAGR by split](docs/images/jump-cagr.png)
 
-<img src="docs/images/jump-volatility.png" width="900">
+![Jump Model state annualized volatility by split](docs/images/jump-volatility.png)
 
 ### XGBoost Bull/Bear Prediction
 
@@ -151,21 +151,21 @@ This supports the intended interpretation of the system: not a pure market-beati
 
 The chart below compares the final model directly with buy-and-hold. Bear periods identified by the final model are shaded in red. This makes it easier to see that the overlay is primarily working by filtering risk during hostile conditions and then re-entering when state conditions improve.
 
-![Final model vs buy-and-hold with bear shading](assets/final-model-vs-buyhold-bear-shading.png)
+![Final model vs buy-and-hold with bear shading](docs/images/final-model-vs-buyhold-bear-shading.png)
 
 ### Model Prediction
 
 The OOS confusion matrix shows the final model’s label classification behavior under the actual out-of-sample evaluation. It is useful because the project is fundamentally a market-state classification system rather than a point-return forecaster.
 
-<img src="docs/images/oos-confusion-matrix.png" width="520">
+![Final model OOS confusion matrix](docs/images/oos-confusion-matrix.png)
 
 The OOS ROC curve summarizes ranking quality across thresholds. It helps show whether the model can separate future bull and bear labels, even when the final exposure rule only uses a specific threshold.
 
-<img src="docs/images/oos-roc-curve.png" width="560">
+![Final model OOS ROC curve](docs/images/oos-roc-curve.png)
 
 The OOS time-series metrics are important because classification quality is not constant over time. The overlay has to survive changing market environments rather than one stable data regime.
 
-<img src="docs/images/oos-metrics-over-time.png" width="900">
+![Final model OOS classification metrics over time](docs/images/oos-metrics-over-time.png)
 
 ## Repository Structure
 
