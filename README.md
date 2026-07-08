@@ -69,11 +69,9 @@ Jump Model is used first to define the latent market states before any supervise
 
 The retained state semantics audit shows that the clustering is not arbitrary. Across train, validation, and OOS windows, one state consistently behaves like a **higher-return / lower-volatility** regime, while the other behaves like a **lower-return / higher-volatility** regime.
 
-The first chart below uses **state-level annualized CAGR** within each split. It shows that one latent state systematically carries the higher annualized return profile. The second chart shows the corresponding annualized volatility split, which helps explain why the regime labels are economically interpretable rather than purely statistical artifacts.
+The chart below combines the state-level annualized CAGR panel and the annualized volatility panel. Together they show that one latent state systematically carries the higher-return / lower-volatility profile, while the other behaves like a lower-return / higher-volatility regime.
 
-![Jump Model state CAGR by split](docs/images/jump-cagr-v2.png)
-
-![Jump Model state annualized volatility by split](docs/images/jump-volatility-v2.png)
+![Jump Model diagnostics](docs/images/jump-model-diagnostics-v3.png)
 
 ### XGBoost Bull/Bear Prediction
 
@@ -155,17 +153,9 @@ The chart below compares the final model directly with buy-and-hold. Bear period
 
 ### Model Prediction
 
-The OOS confusion matrix shows the final model’s label classification behavior under the actual out-of-sample evaluation. It is useful because the project is fundamentally a market-state classification system rather than a point-return forecaster.
+The chart below combines the OOS confusion matrix, ROC curve, and time-series classification metrics. It shows how the final model separates future bull and bear labels, and how that classification quality varies across rolling windows.
 
-![Final model OOS confusion matrix](docs/images/oos-confusion-matrix-v2.png)
-
-The OOS ROC curve summarizes ranking quality across thresholds. It helps show whether the model can separate future bull and bear labels, even when the final exposure rule only uses a specific threshold.
-
-![Final model OOS ROC curve](docs/images/oos-roc-curve-v2.png)
-
-The OOS time-series metrics are important because classification quality is not constant over time. The overlay has to survive changing market environments rather than one stable data regime.
-
-![Final model OOS classification metrics over time](docs/images/oos-metrics-over-time-v2.png)
+![Final model OOS prediction diagnostics](docs/images/model-prediction-oos-v3.png)
 
 ## Repository Structure
 
