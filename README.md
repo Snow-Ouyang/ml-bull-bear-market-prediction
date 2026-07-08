@@ -71,9 +71,9 @@ The retained state semantics audit shows that the clustering is not arbitrary. A
 
 The first chart below uses **state-level annualized CAGR** within each split. It shows that one latent state systematically carries the higher annualized return profile. The second chart shows the corresponding annualized volatility split, which helps explain why the regime labels are economically interpretable rather than purely statistical artifacts.
 
-![Jump Model state CAGR by split](assets/jump-model-state-cagr.png)
+<img src="docs/images/jump-cagr.png" width="900">
 
-![Jump Model state annualized volatility by split](assets/jump-model-state-volatility.png)
+<img src="docs/images/jump-volatility.png" width="900">
 
 ### XGBoost Bull/Bear Prediction
 
@@ -157,15 +157,15 @@ The chart below compares the final model directly with buy-and-hold. Bear period
 
 The OOS confusion matrix shows the final model’s label classification behavior under the actual out-of-sample evaluation. It is useful because the project is fundamentally a market-state classification system rather than a point-return forecaster.
 
-![Final model OOS confusion matrix](assets/final-model-confusion-matrix-oos.png)
+<img src="docs/images/oos-confusion-matrix.png" width="520">
 
 The OOS ROC curve summarizes ranking quality across thresholds. It helps show whether the model can separate future bull and bear labels, even when the final exposure rule only uses a specific threshold.
 
-![Final model OOS ROC curve](assets/final-model-roc-curve-oos.png)
+<img src="docs/images/oos-roc-curve.png" width="560">
 
 The OOS time-series metrics are important because classification quality is not constant over time. The overlay has to survive changing market environments rather than one stable data regime.
 
-![Final model OOS classification metrics over time](assets/final-model-classification-metrics-oos.png)
+<img src="docs/images/oos-metrics-over-time.png" width="900">
 
 ## Repository Structure
 
