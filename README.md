@@ -18,7 +18,7 @@ The project is not a live trading system. It is a historical research and backte
 
 The chart below is the highest-signal comparison in the repository: paper baseline, final model, and buy-and-hold under the same unified protocol. The final model still trails buy-and-hold on headline return, but it improves both Sharpe and drawdown relative to the baseline and retains a much shallower drawdown profile than passive SPY.
 
-![Equity curve comparison](docs/images/equity-curve-comparison-v2.png)
+![Equity curve comparison](docs/images/equity-curve-comparison-v4.png)
 
 ## Motivation
 
@@ -71,7 +71,7 @@ The retained state semantics audit shows that the clustering is not arbitrary. A
 
 The chart below combines the state-level annualized CAGR panel and the annualized volatility panel. Together they show that one latent state systematically carries the higher-return / lower-volatility profile, while the other behaves like a lower-return / higher-volatility regime.
 
-![Jump Model diagnostics](docs/images/jump-model-diagnostics-v3.png)
+![Jump Model diagnostics](docs/images/jump-model-diagnostics-v4.png)
 
 ### XGBoost Bull/Bear Prediction
 
@@ -149,13 +149,13 @@ This supports the intended interpretation of the system: not a pure market-beati
 
 The chart below compares the final model directly with buy-and-hold. Bear periods identified by the final model are shaded in red. This makes it easier to see that the overlay is primarily working by filtering risk during hostile conditions and then re-entering when state conditions improve.
 
-![Final model vs buy-and-hold with bear shading](docs/images/final-model-vs-buyhold-bear-shading-v2.png)
+![Final model vs buy-and-hold with bear shading](docs/images/final-model-vs-buyhold-bear-shading-v4.png)
 
 ### Model Prediction
 
 The chart below combines the OOS confusion matrix, ROC curve, and time-series classification metrics. It shows how the final model separates future bull and bear labels, and how that classification quality varies across rolling windows.
 
-![Final model OOS prediction diagnostics](docs/images/model-prediction-oos-v3.png)
+![Final model OOS prediction diagnostics](docs/images/model-prediction-oos-v4.png)
 
 ## Repository Structure
 
