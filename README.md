@@ -18,7 +18,7 @@ The project is not a live trading system. It is a historical research and backte
 
 The chart below is the highest-signal comparison in the repository: paper baseline, final model, and buy-and-hold under the same unified protocol. The final model still trails buy-and-hold on headline return, but it improves both Sharpe and drawdown relative to the baseline and retains a much shallower drawdown profile than passive SPY.
 
-![Equity curve comparison](https://raw.githubusercontent.com/Snow-Ouyang/ml-bull-bear-market-prediction/main/assets/equity-curve-comparison.png)
+![Equity curve comparison](https://github.com/Snow-Ouyang/ml-bull-bear-market-prediction/raw/main/assets/equity-curve-comparison.png)
 
 ## Motivation
 
@@ -71,9 +71,9 @@ The retained state semantics audit shows that the clustering is not arbitrary. A
 
 The first chart below uses **state-level annualized CAGR** within each split. It shows that one latent state systematically carries the higher annualized return profile. The second chart shows the corresponding annualized volatility split, which helps explain why the regime labels are economically interpretable rather than purely statistical artifacts.
 
-![Jump Model state CAGR by split](https://raw.githubusercontent.com/Snow-Ouyang/ml-bull-bear-market-prediction/main/assets/jump-model-state-cagr.png)
+![Jump Model state CAGR by split](https://github.com/Snow-Ouyang/ml-bull-bear-market-prediction/raw/main/assets/jump-model-state-cagr.png)
 
-![Jump Model state annualized volatility by split](https://raw.githubusercontent.com/Snow-Ouyang/ml-bull-bear-market-prediction/main/assets/jump-model-state-volatility.png)
+![Jump Model state annualized volatility by split](https://github.com/Snow-Ouyang/ml-bull-bear-market-prediction/raw/main/assets/jump-model-state-volatility.png)
 
 ### XGBoost Bull/Bear Prediction
 
@@ -151,21 +151,21 @@ This supports the intended interpretation of the system: not a pure market-beati
 
 The chart below compares the final model directly with buy-and-hold. Bear periods identified by the final model are shaded in red. This makes it easier to see that the overlay is primarily working by filtering risk during hostile conditions and then re-entering when state conditions improve.
 
-![Final model vs buy-and-hold with bear shading](https://raw.githubusercontent.com/Snow-Ouyang/ml-bull-bear-market-prediction/main/assets/final-model-vs-buyhold-bear-shading.png)
+![Final model vs buy-and-hold with bear shading](https://github.com/Snow-Ouyang/ml-bull-bear-market-prediction/raw/main/assets/final-model-vs-buyhold-bear-shading.png)
 
 ### Model Prediction
 
 The OOS confusion matrix shows the final model’s label classification behavior under the actual out-of-sample evaluation. It is useful because the project is fundamentally a market-state classification system rather than a point-return forecaster.
 
-![Final model OOS confusion matrix](https://raw.githubusercontent.com/Snow-Ouyang/ml-bull-bear-market-prediction/main/assets/final-model-confusion-matrix-oos.png)
+![Final model OOS confusion matrix](https://github.com/Snow-Ouyang/ml-bull-bear-market-prediction/raw/main/assets/final-model-confusion-matrix-oos.png)
 
 The OOS ROC curve summarizes ranking quality across thresholds. It helps show whether the model can separate future bull and bear labels, even when the final exposure rule only uses a specific threshold.
 
-![Final model OOS ROC curve](https://raw.githubusercontent.com/Snow-Ouyang/ml-bull-bear-market-prediction/main/assets/final-model-roc-curve-oos.png)
+![Final model OOS ROC curve](https://github.com/Snow-Ouyang/ml-bull-bear-market-prediction/raw/main/assets/final-model-roc-curve-oos.png)
 
 The OOS time-series metrics are important because classification quality is not constant over time. The overlay has to survive changing market environments rather than one stable data regime.
 
-![Final model OOS classification metrics over time](https://raw.githubusercontent.com/Snow-Ouyang/ml-bull-bear-market-prediction/main/assets/final-model-classification-metrics-oos.png)
+![Final model OOS classification metrics over time](https://github.com/Snow-Ouyang/ml-bull-bear-market-prediction/raw/main/assets/final-model-classification-metrics-oos.png)
 
 ## Repository Structure
 
